@@ -1,8 +1,6 @@
 # Oculus Offline Installer
 An offline installer for the Oculus PC software.
 
-**NOTE: You must backup your existing Oculus installation for use with this project.**
-
 ## About
 I created this project because I wanted a way to use my Oculus Quest completely disconnected from Facebook and their data-mining services. I kept my Oculus disconnected from the internet, and had their PC software blocked in my firewall. This worked great for my specific use case, which was primarily using SteamVR and other Open XR applications over a link cable. It then dawned on me that should I ever need to reinstall the PC software or my operating system, I would be out of luck since my workarounds could always be patched in the near future. I wanted everything to stay exactly how it was, frozen in time.
 
@@ -11,7 +9,7 @@ I originally came across a project by drosoCode, who wanted to achieve something
 ## How to Use
 Accomplishing this task is not as easy as copying and pasting the Program Files directories. The official Oculus installer modifies various registry entries, installs system services and drivers, among other things. All of this needs to be replicated as closely as possible to the official installer in order to be a success.
 
-For this, I created batch scripts. To get started, [download](https://github.com/Tech-How/Oculus-Offline-Installer/releases) the latest version of this project, and extract it to an empty, writable directory. If you'd like to create a backup to restore in the future or on another computer, I recommend using an external storage device or backup service. To create a backup for the first time, you'll need to run the Backup script on a machine with Oculus already installed.
+For this, I created batch scripts. To get started, [download](https://github.com/Tech-How/Oculus-Offline-Installer/releases) the latest version of this project, and extract it to an empty, writable directory. If you plan to save your Oculus app for reinstallation in the future or use it on another computer, I recommend using an external storage device or backup service. To prepare this installer for the first time, you'll need to save your current Oculus software. You can do this by running the Backup script on a machine with Oculus already installed, and a headset configured.
 
 After you've created a backup, you can install the PC software on any computer by running the Install script. During the installation process you'll be given the option to block communication with Facebook and Oculus. Use this mode if you only plan to use third-party Open XR applications like SteamVR, because the main Oculus library will not function. You can always block or unblock these connections later by running the respective scripts inside of the Network Backup folder.
 
