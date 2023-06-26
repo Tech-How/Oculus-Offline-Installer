@@ -6,9 +6,12 @@ I created this project because I wanted a way to use my Oculus Quest completely 
 
 I originally came across a project by drosoCode, who wanted to achieve something similar. Updates to the PC software overtime had broken their work, so I decided to go on a hunt to develop one that worked with the latest PC software, and I came up with this. Whether you're like me and want to block Facebook, or just have a computer without internet access, this should have you covered. I would like to give a big thank you to drosoCode for the original project, which can be found [here](https://github.com/drosoCode/Offculus). As of now this project is archived and not receiving any more updates.
 
-## Getting Started
+## How to Use
 Accomplishing this task is not as easy as copying and pasting the Program Files directories. The official Oculus installer modifies various registry entries, installs system services and drivers, among other things. All of this needs to be replicated as closely as possible to the official installer in order to be a success.
 
 For this, I created batch scripts. To get started, [download](https://github.com/Tech-How/Oculus-Offline-Installer/releases) the latest version of this project, and extract it to an empty, writable directory. If you'd like to create a backup to restore in the future or on another computer, I recommend using an external storage device or backup service. To create a backup for the first time, you'll need to run the Backup script on a machine with Oculus already installed.
 
-## Network Information
+After you've created a backup, you can install the PC software on any computer by running the Install script. During the installation process you'll be given the option to block communication with Facebook and Oculus. Use this mode if you only plan to use third-party Open XR applications like SteamVR, because the main Oculus library will not function. You can always block or unblock these connections later by running the respective scripts inside of the Network Backup folder.
+
+## Other Notes
+If you find any issues with this project, you can let me know by opening an issue report [here](https://github.com/Tech-How/Oculus-Offline-Installer/issues).
