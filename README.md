@@ -14,4 +14,6 @@ For this, I created batch scripts. To get started, [download](https://github.com
 After you've created a backup, you can install the PC software on any computer by running the Install script. During the installation process you'll be given the option to block communication with Facebook and Oculus. Enable this mode if you only plan to use third-party Open XR applications like SteamVR, because the main Oculus library will not function. You can always block or unblock these connections later by running the respective scripts inside of the Network Backup folder.
 
 ## Other Notes
+Newer versions of the Oculus app may communicate with different IPs that aren't covered in the built-in network block. For this reason, it's advised to manually create Firewall rules connected to all Oculus-related software if you're trying to go this route.
+
 If you find any issues with this project, you can let me know by opening an issue report [here](https://github.com/Tech-How/Oculus-Offline-Installer/issues).
