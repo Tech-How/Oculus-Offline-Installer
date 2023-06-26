@@ -1,6 +1,8 @@
 # Oculus Offline Installer
 An offline installer for the Oculus PC software.
 
+**NOTE: You must backup your existing Oculus installation for use with this project.**
+
 ## About
 I created this project because I wanted a way to use my Oculus Quest completely disconnected from Facebook and their data-mining services. I kept my Oculus disconnected from the internet, and had their PC software blocked in my firewall. This worked great for my specific use case, which was primarily using SteamVR and other Open XR applications over a link cable. It then dawned on me that should I ever need to reinstall the PC software or my operating system, I would be out of luck since my workarounds could always be patched in the near future. I wanted everything to stay exactly how it was, frozen in time.
 
