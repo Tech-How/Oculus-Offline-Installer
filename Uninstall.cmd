@@ -28,35 +28,11 @@ cls
 echo BypassIntegrity > "%temp%\BypassIntegrityCheck.store"
 :BypassIntegrityCheck
 
-:: https://stackoverflow.com/questions/1894967/how-to-request-administrator-access-inside-a-batch-file
-:: BatchGotAdmin
-:-------------------------------------
-REM  --> Check for permissions
-    IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
->nul 2>&1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
-) ELSE (
->nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
-)
+set "args=%~dp0." && if "%*" neq "" set "args=%*"
+net file 1>nul 2>nul
+if errorlevel 1 powershell -Command "Start-Process -FilePath \"%0\" -ArgumentList \"%args%\" -Verb runas" >nul 2>&1 & exit /b
+cd /d %~dp0
 
-REM --> If error flag set, we do not have admin.
-if '%errorlevel%' NEQ '0' (
-    echo Requesting administrative privileges...
-    goto UACPrompt
-) else ( goto gotAdmin )
-
-:UACPrompt
-    echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\getadmin.vbs"
-    set params= %*
-    echo UAC.ShellExecute "cmd.exe", "/c ""%~s0"" %params:"=""%", "", "runas", 1 >> "%temp%\getadmin.vbs"
-
-    "%temp%\getadmin.vbs"
-    del "%temp%\getadmin.vbs"
-    exit /B
-
-:gotAdmin
-    pushd "%CD%"
-    CD /D "%~dp0"
-:--------------------------------------  
 @echo off
 title Uninstall Oculus
 Redistributables\NirCmd.exe qboxcom "Uninstall Oculus?~n~nThis will remove the Oculus app from your PC, as well as any software you've downloaded through the Oculus store." "Oculus Setup" inisetval "Redistributables\Uninstall.ini" "section1" "TestValue" "1"
