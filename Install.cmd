@@ -29,7 +29,7 @@ echo BypassIntegrity > "%temp%\BypassIntegrityCheck.store"
 
 set "args=%~dp0." && if "%*" neq "" set "args=%*"
 net file 1>nul 2>nul
-if errorlevel 1 powershell -Command "Start-Process -FilePath \"%0\" -ArgumentList \"%args%\" -Verb runas" >nul 2>&1 & exit /b
+if errorlevel 1 echo Requesting administrative privileges... && powershell -Command "Start-Process -FilePath \"%0\" -ArgumentList \"%args%\" -Verb runas" >nul 2>&1 & exit /b
 cd /d %~dp0
   
 title Oculus Setup
